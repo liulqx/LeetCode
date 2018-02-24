@@ -1,3 +1,2 @@
 # LeetCode
 SelfCode
-1
