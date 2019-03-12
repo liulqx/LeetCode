@@ -32,13 +32,13 @@ class Solution {
         Arrays.sort(nums);
         System.out.println(Arrays.toString(nums));
         List<List<Integer>> result = new ArrayList<>();
-        if(nums==null||nums.length>3&& nums[nums.length-1]==0){
-            ArrayList<List<Integer>> lists = new ArrayList<>();
-            return lists;
-        }
+
 
         int count = 0;
         for (int i = 0; i < nums.length - 2; i++) {
+            if (i > 0 && nums[i] == nums[i-1]) { // Skip duplicated first number
+                continue;
+            }
             for (int j = i + 1; j < nums.length - 1; j++) {
                 for (int k = j + 1; k < nums.length; k++) {
                     //System.out.printf(nums[i] + "," + nums[j] + "," + nums[k] + "\n");
