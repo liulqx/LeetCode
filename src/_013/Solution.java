@@ -37,31 +37,17 @@ class Solution {
             if (integer == null) {
                 continue;
             }
-            System.out.println(chars[i]);
-            //if(i<chars.length-1&& chars[i]==chars[i+1]){
-            //    temp+=integer;
-            //}
+            //System.out.println(chars[i]);
 
-            //if (i == 0 || chars[i] == chars[i - 1]) {
-            //    temp += integer;
-            //}
-
-
-            if (i < chars.length - 1 && chars[i] < chars[i + 1]) {
-                if (map.get(chars[i]) < map.get(chars[i + 1])) {
-                    sum -= temp = integer;
-                    temp = 0;
-                }
-            } else if (i < chars.length - 1 && chars[i] == chars[i + 1]) {
-                if (map.get(chars[i]) < map.get(chars[i + 1])) {
-                    temp += integer;
-                }
+            if (i < chars.length - 1 && map.get(chars[i]) < map.get(chars[i + 1])) {
+                sum -= integer;
             } else {
                 sum += integer;
             }
+            //System.out.println("目前的和：" + sum);
         }
-        System.out.println(sum);
-        return 0;
+        //System.out.println(sum);
+        return sum;
     }
 
     public static void main(String[] args) {
@@ -69,11 +55,12 @@ class Solution {
 
         //M C M X C I V
         //+ - + - + - +
-        //1000-100-1000-10+100-1+5
+        //1000-100+1000-10+100-1+5
 
         //M CM XC IV
         //1000 900 90 4
         int iv = new Solution().romanToInt("MCMXCIV");
+        System.out.println(iv);
     }
 
 
